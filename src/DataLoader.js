@@ -6,15 +6,8 @@ export default function DataLoader() {
   const [monsterName, setMonsterName] = useState([]);
   const [monsterLoot, setMonsterLoot] = useState([]);
 
-  // handleRowClick = e =>
-  // {
-  //   //this.setState({redirect: true, url: "/Weapon/" + e.currentTarget.cells[0].innerText});
-  //   debugger;
-  //   this.setState({weaponID: parseInt(e.currentTarget.cells[0].innerText), weaponName: e.currentTarget.cells[1].innerText, weaponDescription: e.currentTarget.cells[3].innerText});
-  // }
-
   useEffect(() => {
-    fetch("https://localhost:44395/api/Monsters")
+    fetch("https://192.168.0.74:5001/api/Monsters")
       .then(response => response.json())
       .then(json => {
         var obj = [];
@@ -25,7 +18,7 @@ export default function DataLoader() {
             clickEvent: e => {
               var monsterID = e.currentTarget.cells[0].innerText;
               fetch(
-                `https://localhost:44395/api/monsterloots/monsterid/${monsterID}`
+                `https://192.168.0.74:5001/api/monsterloots/monsterid/${monsterID}`
               )
                 .then(response => response.json())
                 .then(json => {

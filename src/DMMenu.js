@@ -56,7 +56,7 @@ class DMMenu extends React.Component {
   }
 
   FetchWeapons() {
-    fetch("https://localhost:44395/api/Weapons")
+    fetch("https://192.168.0.74:5001/api/Weapons")
       .then(res => res.json())
       .then(json => {
         var obj = [];
