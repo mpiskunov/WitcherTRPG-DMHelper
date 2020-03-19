@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { MDBDataTable } from "mdbreact";
 import { Container } from "react-bootstrap";
+var config = require('./config.js');
 export default function DataLoader() {
   const [data, setData] = useState({ data: { columns: [], rows: [] } });
   const [monsterName, setMonsterName] = useState([]);
   const [monsterLoot, setMonsterLoot] = useState([]);
 
   useEffect(() => {
-    fetch("https://192.168.0.74:5001/api/Monsters")
+    fetch(`${config.serverURL}/api/Monsters`)
       .then(response => response.json())
       .then(json => {
         var obj = [];
@@ -18,7 +19,7 @@ export default function DataLoader() {
             clickEvent: e => {
               var monsterID = e.currentTarget.cells[0].innerText;
               fetch(
-                `https://192.168.0.74:5001/api/monsterloots/monsterid/${monsterID}`
+                `${config.serverURL}/api/monsterloots/monsterid/${monsterID}`
               )
                 .then(response => response.json())
                 .then(json => {

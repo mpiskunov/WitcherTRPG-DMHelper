@@ -4,6 +4,11 @@ import { Col, Row } from "react-bootstrap";
 import { MDBDataTable } from "mdbreact";
 import { Redirect } from "react-router";
 import Weapon from "./Weapon";
+var config = require('./config.js');
+
+console.log(config.serverURL);
+
+debugger;
 class DMMenu extends React.Component {
   constructor(props) {
     super(props);
@@ -56,7 +61,7 @@ class DMMenu extends React.Component {
   }
 
   FetchWeapons() {
-    fetch("https://192.168.0.74:5001/api/Weapons")
+    fetch(`${config.serverURL}/api/Weapons`)
       .then(res => res.json())
       .then(json => {
         var obj = [];

@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Col, Row } from "react-bootstrap";
+var config = require('./config.js');
 class Weapon extends React.Component {
   constructor(props) {
     super(props);
@@ -13,7 +14,7 @@ class Weapon extends React.Component {
     debugger;
     const value = this.props.weaponID;
     if (value > 0) {
-      fetch(`https://192.168.0.74:5001/api/Weapons/${value}`)
+      fetch(`${config.serverURL}/api/Weapons/${value}`)
         .then(res => res.json())
         .then(json => {
           this.setState({

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { MDBDataTable } from "mdbreact";
+var config = require('../config.js');
 const Cover = props => {
   const [data, setData] = useState({ data: { columns: [], rows: [] } });
 
   useEffect(() => {
-    fetch("https://192.168.0.74:5001/api/CommonCovers")
+    fetch(`${config.serverURL}/api/CommonCovers`)
       .then(response => response.json())
       .then(json => {
         debugger;
