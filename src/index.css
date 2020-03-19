@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.dataTables_wrapper .table thead tr th:nth-child(4),
+.dataTables_wrapper .table tbody tr td:nth-child(4)
+{
+  display: none;
+ } 
