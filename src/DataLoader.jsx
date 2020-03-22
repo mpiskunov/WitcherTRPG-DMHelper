@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { MDBDataTable } from "mdbreact";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
+import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
 var config = require("./config.js");
 export default function DataLoader() {
   const [data, setData] = useState({ data: { columns: [], rows: [] } });
   const [monsterName, setMonsterName] = useState([]);
   const [monsterLoot, setMonsterLoot] = useState([]);
+  const [showModal, setModalShow] = useState(false);
+
+  const toggleModal = () => {
+    setModalShow(!showModal);
+  }
 
   useEffect(() => {
     fetch(`${config.serverURL}/api/Monsters`)
@@ -25,7 +31,9 @@ export default function DataLoader() {
                 .then(json => {
                   setMonsterName(json[0].monster.name);
                   setMonsterLoot(json);
+                  //setModalShow();
                 });
+                toggleModal();
               //e.currentTarget.cells[0].innerText
             }
           });
@@ -51,16 +59,41 @@ export default function DataLoader() {
 
   return (
     <Container>
-      <h1>{monsterName}</h1>
-      <div>
-        <ul>
+      <Row className="justify-content-center text-center">
+        <Col xs="7" sm="10"><h1>Monster Loot Table</h1></Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col xs="7" sm="10">
+                <MDBDataTable 
+        striped
+        small
+        hover
+        bordered
+        fixed
+        entries={25}
+      btn data={data} 
+      noBottomColumns
+            searching={false}
+            displayEntries={false}
+            // paging={false}
+            sortable={false}
+        />
+        </Col>
+      </Row>
+
+        <MDBModal isOpen={showModal} toggle={toggleModal} centered>
+        <MDBModalHeader toggle={toggleModal}>{monsterName}</MDBModalHeader>
+          <MDBModalBody>
+          <ul>
           {monsterLoot.map((loot, index) => (
             <li key={loot.id}>{loot.description}</li>
           ))}
         </ul>
-      </div>
-
-      <MDBDataTable striped hover bordered btn data={data} />
+          </MDBModalBody>
+          <MDBModalFooter>
+            <MDBBtn color="secondary" onClick={toggleModal}>Close</MDBBtn>
+          </MDBModalFooter>
+        </MDBModal>
     </Container>
   );
 }

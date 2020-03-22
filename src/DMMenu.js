@@ -104,24 +104,36 @@ class DMMenu extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <Container>
         <Row className="justify-content-center">
-          <h1>{this.state.weaponName}</h1>
-        </Row>
-        <Row xs="12" className="justify-content-center">
-          <Col cs="6">{this.state.weaponDescription}</Col>
+          <Col xs="6">
+            <h1>{this.state.weaponName}</h1>
+          </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col xs="8" sm="9" md="9">
+          <Col xs="6">{this.state.weaponDescription}</Col>
+        </Row>
+        <Row className="justify-content-center">
+          <Col xs="7" sm="8" md="10">
             <MDBDataTable
               striped
+              small
               hover
               bordered
-              btn
+              fixed
+              entries={25}
               data={this.state.data}
               key={this.state.data.columns.id}
+              noBottomColumns
+            searching={false}
+            displayEntries={false}
+            // paging={false}
+            sortable={false}
             />
           </Col>
         </Row>
+        </Container>
+       
       </React.Fragment>
     );
   }
