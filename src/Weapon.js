@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 var config = require("./config.js");
 class Weapon extends React.Component {
   constructor(props) {
@@ -25,16 +25,14 @@ class Weapon extends React.Component {
   }
   render() {
     return (
-      <div>
-        <Container>
+      <React.Fragment>
           <Row className="justify-content-center">
             <h1>{this.state.weaponName}</h1>
           </Row>
           <Row xs="12" className="justify-content-center">
             <Col cs="6">{this.state.description}</Col>
           </Row>
-        </Container>
-      </div>
+      </React.Fragment>
     );
   }
 }

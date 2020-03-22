@@ -1,8 +1,7 @@
 import React from "react";
-import { Container } from "react-bootstrap";
 import { Col, Row } from "react-bootstrap";
 import { MDBDataTable } from "mdbreact";
-import { Redirect } from "react-router";
+import SelectedNavBar from "./site.js";
 var config = require("./config.js");
 class DMMenu extends React.Component {
   constructor(props) {
@@ -38,6 +37,7 @@ class DMMenu extends React.Component {
   }
 
   componentDidMount() {
+    SelectedNavBar(["navWeapon"]);
     this.FetchWeapons();
   }
 
@@ -97,14 +97,13 @@ class DMMenu extends React.Component {
         });
       })
       .catch(error => {
-        alert(error);
+        //alert(error);
       });
   }
 
   render() {
     return (
       <React.Fragment>
-        <Container>
         <Row className="justify-content-center">
           <Col xs="6">
             <h1>{this.state.weaponName}</h1>
@@ -132,8 +131,6 @@ class DMMenu extends React.Component {
             />
           </Col>
         </Row>
-        </Container>
-       
       </React.Fragment>
     );
   }

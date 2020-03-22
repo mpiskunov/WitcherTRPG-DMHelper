@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { MDBDataTable } from "mdbreact";
+import SelectedNavBar from "../site.js";
 var config = require("../config.js");
 const Cover = props => {
   const [data, setData] = useState({ data: { columns: [], rows: [] } });
 
   useEffect(() => {
-    fetch(`${config.serverURL}/api/CommonCovers`)
+    SelectedNavBar(["navCombat","navCombatCover"]);
+  fetch(`${config.serverURL}/api/CommonCovers`)
       .then(response => response.json())
       .then(json => {
         var obj = [];
@@ -31,10 +33,11 @@ const Cover = props => {
         };
         setData(data);
       });
-  });
+      
+  }, []);
 
   return (
-    <Container>
+    <React.Fragment>
       <Row className="justify-content-center text-center">
         <Col md="8" sm="12">
           <h1>Combat Cover</h1>
@@ -58,7 +61,7 @@ const Cover = props => {
           />
         </Col>
       </Row>
-    </Container>
+    </React.Fragment>
   );
 };
 export default Cover;

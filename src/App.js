@@ -1,11 +1,11 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import BlockLink from "./BlockLink";
 class App extends React.Component {
   render() {
     return (
-      <Container>
-        <br />
+      <React.Fragment>
+                <br />
         <br />
         <br />
         <Row className="justify-content-center text-center">
@@ -19,7 +19,8 @@ class App extends React.Component {
             <BlockLink name="Combat" url="/Combat"></BlockLink>
           </Col>
         </Row>
-      </Container>
+      </React.Fragment>
+
     );
   }
 }

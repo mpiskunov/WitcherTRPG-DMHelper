@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { MDBDataTable } from "mdbreact";
-import { Container, Row, Col } from "react-bootstrap";
-import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
+import { Row, Col } from "react-bootstrap";
+import { MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
+
+import SelectedNavBar from "./site.js";
 var config = require("./config.js");
 export default function DataLoader() {
   const [data, setData] = useState({ data: { columns: [], rows: [] } });
@@ -14,6 +16,7 @@ export default function DataLoader() {
   }
 
   useEffect(() => {
+    SelectedNavBar(["navLoot"]);
     fetch(`${config.serverURL}/api/Monsters`)
       .then(response => response.json())
       .then(json => {
@@ -58,7 +61,7 @@ export default function DataLoader() {
   }, []); // << super important array
 
   return (
-    <Container>
+    <React.Fragment>
       <Row className="justify-content-center text-center">
         <Col xs="7" sm="10"><h1>Monster Loot Table</h1></Col>
       </Row>
@@ -94,6 +97,6 @@ export default function DataLoader() {
             <MDBBtn color="secondary" onClick={toggleModal}>Close</MDBBtn>
           </MDBModalFooter>
         </MDBModal>
-    </Container>
+    </React.Fragment>
   );
 }
