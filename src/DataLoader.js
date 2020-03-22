@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MDBDataTable } from "mdbreact";
 import { Container } from "react-bootstrap";
-var config = require('./config.js');
+var config = require("./config.js");
 export default function DataLoader() {
   const [data, setData] = useState({ data: { columns: [], rows: [] } });
   const [monsterName, setMonsterName] = useState([]);

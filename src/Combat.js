@@ -1,15 +1,14 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
 import Cover from "./CombatComponents/Cover";
+import { Row, Col } from "react-bootstrap";
 const Combat = props => {
   //const [redirect, setRedirect] = useState(false);
 
   return (
-    <div>
+    <React.Fragment>
       <h1>Combat</h1>
-      <Link to="/Combat/Cover">Click here for cover</Link>
-      <Route path="/Combat/Cover" component={Cover} />
-    </div>
+    </React.Fragment>
   );
 };
 export default Combat;

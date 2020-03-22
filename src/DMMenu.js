@@ -1,14 +1,9 @@
-import React, { useState } from "react";
-import { Button, Container, Table, ThemeProvider } from "react-bootstrap";
+import React from "react";
+import { Container } from "react-bootstrap";
 import { Col, Row } from "react-bootstrap";
 import { MDBDataTable } from "mdbreact";
 import { Redirect } from "react-router";
-import Weapon from "./Weapon";
-var config = require('./config.js');
-
-console.log(config.serverURL);
-
-debugger;
+var config = require("./config.js");
 class DMMenu extends React.Component {
   constructor(props) {
     super(props);
@@ -18,25 +13,21 @@ class DMMenu extends React.Component {
           {
             label: "ID",
             field: "id",
-            sort: "asc",
-            width: 100
+            sort: "asc"
           },
           {
             label: "Name",
             field: "name",
-            sort: "asc",
-            width: 100
+            sort: "asc"
           },
           {
             label: "Attack Type",
             field: "attackType",
-            sort: "asc",
-            width: 100
+            sort: "asc"
           }
         ],
         rows: [{ id: -1, name: null, attackType: null }]
       },
-      redirect: false,
       url: "/",
       weaponID: -1,
       weaponName: "",
@@ -51,8 +42,6 @@ class DMMenu extends React.Component {
   }
 
   handleRowClick(e) {
-    //this.setState({redirect: true, url: "/Weapon/" + e.currentTarget.cells[0].innerText});
-    debugger;
     this.setState({
       weaponID: parseInt(e.currentTarget.cells[0].innerText),
       weaponName: e.currentTarget.cells[1].innerText,
@@ -113,31 +102,27 @@ class DMMenu extends React.Component {
   }
 
   render() {
-    var weaponIDRender = this.state.weaponID;
-    if (this.state.redirect) {
-      return <Redirect push to={this.state.weaponID} />;
-    }
     return (
-      <Container>
-        <div>
-          <Container>
-            <Row className="justify-content-center">
-              <h1>{this.state.weaponName}</h1>
-            </Row>
-            <Row xs="12" className="justify-content-center">
-              <Col cs="6">{this.state.weaponDescription}</Col>
-            </Row>
-          </Container>
-        </div>
-        <MDBDataTable
-          striped
-          hover
-          bordered
-          btn
-          data={this.state.data}
-          key={this.state.data.columns.id}
-        />
-      </Container>
+      <React.Fragment>
+        <Row className="justify-content-center">
+          <h1>{this.state.weaponName}</h1>
+        </Row>
+        <Row xs="12" className="justify-content-center">
+          <Col cs="6">{this.state.weaponDescription}</Col>
+        </Row>
+        <Row className="justify-content-center">
+          <Col xs="8" sm="9" md="9">
+            <MDBDataTable
+              striped
+              hover
+              bordered
+              btn
+              data={this.state.data}
+              key={this.state.data.columns.id}
+            />
+          </Col>
+        </Row>
+      </React.Fragment>
     );
   }
 }

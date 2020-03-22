@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Col, Row } from "react-bootstrap";
-var config = require('./config.js');
+var config = require("./config.js");
 class Weapon extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +11,6 @@ class Weapon extends React.Component {
   }
 
   componentDidMount() {
-    debugger;
     const value = this.props.weaponID;
     if (value > 0) {
       fetch(`${config.serverURL}/api/Weapons/${value}`)

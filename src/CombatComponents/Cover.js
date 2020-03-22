@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { MDBDataTable } from "mdbreact";
-var config = require('../config.js');
+var config = require("../config.js");
 const Cover = props => {
   const [data, setData] = useState({ data: { columns: [], rows: [] } });
 
@@ -9,10 +9,8 @@ const Cover = props => {
     fetch(`${config.serverURL}/api/CommonCovers`)
       .then(response => response.json())
       .then(json => {
-        debugger;
         var obj = [];
         for (var i = 0; i < json.length; i++) {
-          debugger;
           obj.push({
             name: json[i].description,
             SP: json[i].stoppingPower
@@ -38,12 +36,12 @@ const Cover = props => {
   return (
     <Container>
       <Row className="justify-content-center text-center">
-        <Col md="4" sm="12">
+        <Col md="8" sm="12">
           <h1>Combat Cover</h1>
         </Col>
       </Row>
       <Row className="justify-content-center">
-        <Col md="4" sm="12">
+        <Col md="8" sm="12">
           <MDBDataTable
             striped
             small
