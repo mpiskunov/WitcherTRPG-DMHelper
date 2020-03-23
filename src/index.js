@@ -10,6 +10,7 @@ import Weapon from "./Weapon";
 import Loot from "./Loot";
 import Combat from "./Combat";
 import Spells from "./Spells/Spells";
+import Skills from "./SkillComponents/Skills";
 import SideNavBar from "./SideNav";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
@@ -32,6 +33,7 @@ const routing = (
       <Route path="/Weapon/:weaponID" component={Weapon} />
       <Route exact path="/Combat/Cover" component={Cover} />
       <Route path="/Spells" component={Spells} />
+      <Route path="/Skills" component={Skills} />
     </Container>
    
   </Router>

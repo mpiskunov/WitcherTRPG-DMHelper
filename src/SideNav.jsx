@@ -56,6 +56,12 @@ const SideNavBar = () => {
             <NavText>Cover</NavText>
           </NavItem>
         </NavItem>
+        <NavItem eventKey="/Skills" id="navSkill">
+          <NavIcon>
+            <i className="fab fa-megaport" style={{ fontSize: "1.75em" }} />
+          </NavIcon>
+          <NavText>Skills</NavText>
+        </NavItem>
       </SideNav.Nav>
     </SideNav>
   );
