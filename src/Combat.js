@@ -20,7 +20,7 @@ const Combat = props => {
         <br />
         <Row className="justify-content-center text-center">
           <Col xs="7" md="4">
-            <BlockLink name="Cover" url="Combat/Cover"></BlockLink>
+            <BlockLink name="Cover" url="Combat/Cover" nav={["navCombat","navCombatCover"]}></BlockLink>
           </Col>
         </Row>
     </React.Fragment>

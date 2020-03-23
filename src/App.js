@@ -18,6 +18,9 @@ class App extends React.Component {
           <Col xs="7" md="4">
             <BlockLink name="Combat" url="/Combat"></BlockLink>
           </Col>
+          <Col xs="7" md="4">
+            <BlockLink name="Spells" url="/Spells"></BlockLink>
+          </Col>
         </Row>
       </React.Fragment>
 

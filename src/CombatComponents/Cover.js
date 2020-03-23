@@ -7,7 +7,7 @@ const Cover = props => {
   const [data, setData] = useState({ data: { columns: [], rows: [] } });
 
   useEffect(() => {
-    SelectedNavBar(["navCombat","navCombatCover"]);
+    SelectedNavBar(["navCombat", "navCombatCover"]);
   fetch(`${config.serverURL}/api/CommonCovers`)
       .then(response => response.json())
       .then(json => {

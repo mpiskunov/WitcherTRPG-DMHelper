@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-!/node_modules/@trendmicro/index.js
+!/node_modules/@trendmicro/react-sidenav/lib/index.js
 /.pnp
 .pnp.js
 

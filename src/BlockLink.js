@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { Card } from "react-bootstrap";
 import { Redirect } from "react-router";
+import { useHistory } from "react-router-dom";
 
 const BlockLink = props => {
-  const [redirect, setRedirect] = useState(false);
-
-  if (redirect) {
-    return <Redirect push to={props.url} />;
-  }
+  const history = useHistory();
 
   let CardClickHandler = () => {
-    setRedirect(true);
+    history.push({
+      pathname: props.url,
+      state: {nav: props.nav}
+    });
   };
 
   return (

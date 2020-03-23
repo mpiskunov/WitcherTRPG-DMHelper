@@ -10,9 +10,12 @@ const SideNavBar = () => {
     <SideNav
       id="NavBar"
       onSelect={selected => {
-        debugger;
         SelectedNavBar([selected.navID]);
-        history.push(`${selected.eventKey}`);
+        //history.push(`${selected.eventKey}`);
+        history.push({
+          pathname: selected.eventKey,
+          state: {nav: selected.navID}
+        });
       }}
     >
       <SideNav.Toggle />

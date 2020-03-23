@@ -5,7 +5,7 @@ import { MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from '
 
 import SelectedNavBar from "./site.js";
 var config = require("./config.js");
-export default function DataLoader() {
+export default function DataLoader(props) {
   const [data, setData] = useState({ data: { columns: [], rows: [] } });
   const [monsterName, setMonsterName] = useState([]);
   const [monsterLoot, setMonsterLoot] = useState([]);

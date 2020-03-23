@@ -12,7 +12,7 @@ const SelectedNavBar = (sectionName) =>
     // Returns all Nav Items on the SideBar
     var navItems = document.getElementsByClassName(navItem);
     var subNavItems = document.getElementsByClassName(subNavItems);
-    debugger;
+    
     if(navItems.length == 0) return;
     // For each Nav Item, remove the highlighted/selected classes from them.
     for(var i = 0; i < navItems.length; i++)
