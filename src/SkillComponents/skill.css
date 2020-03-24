@@ -1,0 +1,21 @@
+.list-group-item {
+  border: inherit !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125) !important;
+}
+
+.text-responsive {
+  font-size: calc(0.8vw + 1vh);
+}
+
+.text-responsive-item {
+  font-size: calc(0.35vw + 1vh);
+}
+
+/* @media (min-width: 576px) {
+  .jumbo-skill-title {
+    font-size: 20px;
+  }
+  .jumbo-skill-info {
+    font-size: 13px;
+  }
+} */

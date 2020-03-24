@@ -12,6 +12,7 @@ import Combat from "./Combat";
 import Spells from "./Spells/Spells";
 import Skills from "./SkillComponents/Skills";
 import SideNavBar from "./SideNav";
+import Monsters from './MonsterComponents/Monsters';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
@@ -27,13 +28,14 @@ const routing = (
     <SideNavBar></SideNavBar>
     <Container>
        <Route exact path="/" component={App} />
-      <Route path="/DMMenu" component={DMMenu} />
-      <Route path="/Loot" component={Loot} />
+      <Route exact path="/DMMenu" component={DMMenu} />
+      <Route exact path="/Loot" component={Loot} />
       <Route exact path="/Combat" component={Combat} />
-      <Route path="/Weapon/:weaponID" component={Weapon} />
+      <Route exact path="/Weapon/:weaponID" component={Weapon} />
       <Route exact path="/Combat/Cover" component={Cover} />
-      <Route path="/Spells" component={Spells} />
-      <Route path="/Skills" component={Skills} />
+      <Route exact path="/Spells" component={Spells} />
+      <Route exact path="/Skills" component={Skills} />
+      <Route exact path="/Monsters" component={Monsters} />
     </Container>
    
   </Router>

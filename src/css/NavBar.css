@@ -1,6 +1,7 @@
 /* The navigation bar */
 #NavBar {
-  /* overflow: hidden !important; */
+  overflow-x: hidden;
+  overflow-y: scroll;
   position: fixed !important; /* Set the navbar to fixed position */
   top: 0 !important; /* Position the navbar at the top of the page */
   left: 0 !important; /* Full width */

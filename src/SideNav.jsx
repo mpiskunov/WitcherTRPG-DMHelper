@@ -62,6 +62,12 @@ const SideNavBar = () => {
           </NavIcon>
           <NavText>Skills</NavText>
         </NavItem>
+        <NavItem eventKey="/Monsters" id="navMonster">
+          <NavIcon>
+            <i className="fas fa-pastafarianism" style={{ fontSize: "1.75em" }} />
+          </NavIcon>
+          <NavText>Monsters</NavText>
+        </NavItem>
       </SideNav.Nav>
     </SideNav>
   );
