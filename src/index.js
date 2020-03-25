@@ -26,7 +26,7 @@ import { Container } from "react-bootstrap";
 const routing = (
   <Router>
     <SideNavBar></SideNavBar>
-    <Container>
+    <Container className="mx-auto">
        <Route exact path="/" component={App} />
       <Route exact path="/DMMenu" component={DMMenu} />
       <Route exact path="/Loot" component={Loot} />
