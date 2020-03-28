@@ -64,7 +64,13 @@ const SideNavBar = () => {
         </NavItem>
         <NavItem eventKey="/Monsters" id="navMonster">
           <NavIcon>
-            <i className="fas fa-pastafarianism" style={{ fontSize: "1.75em" }} />
+            <i className="fas fa-dragon" style={{ fontSize: "1.75em" }} />
+          </NavIcon>
+          <NavText>Monsters</NavText>
+        </NavItem>
+        <NavItem eventKey="/Effects" id="navEffect">
+          <NavIcon>
+            <i className="fas fa-fire" style={{ fontSize: "1.75em" }} />
           </NavIcon>
           <NavText>Monsters</NavText>
         </NavItem>

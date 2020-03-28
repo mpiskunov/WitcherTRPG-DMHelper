@@ -13,6 +13,7 @@ import Spells from "./Spells/Spells";
 import Skills from "./SkillComponents/Skills";
 import SideNavBar from "./SideNav";
 import Monsters from './MonsterComponents/Monsters';
+import EffectList from './EffectComponents/EffectList';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
@@ -36,6 +37,7 @@ const routing = (
       <Route exact path="/Spells" component={Spells} />
       <Route exact path="/Skills" component={Skills} />
       <Route exact path="/Monsters" component={Monsters} />
+      <Route exact path="/Effects" component={EffectList} />
     </Container>
    
   </Router>
