@@ -12,19 +12,19 @@ export default function EffectList() {
   }, []);
 
   return (
-      <Row className="justify-content-end pt-5">
+      <Row className="justify-content-end pt-5 text-center">
           <Col xs="10" md="11" lg="12">
               <Table striped bordered hover size="sm">
                   <thead>
                       <tr>
-                          <th>Effect</th>
+                          <th style={{width: "12%"}}>Effect</th>
                           <th>Description</th>
                       </tr>
                   </thead>
                   <tbody>
                       {effects.map(ef => (
                           <tr>
-                      <td>{ef.name}</td>
+                      <td style={{fontWeight: "bold"}}>{ef.name}</td>
                       <td>{ef.description}</td>
                           </tr>
                       ))}

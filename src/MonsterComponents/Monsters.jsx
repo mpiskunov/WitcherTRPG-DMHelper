@@ -237,7 +237,7 @@ export default function Monsters(props) {
                               CalculateSkill(
                                 v.skill.statistic.statisticCategory,
                                 v.monsterID
-                              )}
+                              )} / {v.skill.statistic.statisticCategory}
                           </td>
                         </tr>
                       ))}

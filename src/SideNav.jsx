@@ -74,6 +74,12 @@ const SideNavBar = () => {
           </NavIcon>
           <NavText>Monsters</NavText>
         </NavItem>
+        <NavItem eventKey="/ArmorList" id="navArmor">
+          <NavIcon>
+            <i className="fas fa-shield-alt" style={{ fontSize: "1.75em" }} />
+          </NavIcon>
+          <NavText>Monsters</NavText>
+        </NavItem>
       </SideNav.Nav>
     </SideNav>
   );
