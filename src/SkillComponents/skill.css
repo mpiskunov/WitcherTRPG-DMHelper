@@ -11,11 +11,30 @@
   font-size: calc(0.35vw + 1vh);
 }
 
-/* @media (min-width: 576px) {
-  .jumbo-skill-title {
-    font-size: 20px;
+div.justify-content-end.text-center.row {
+  padding-right: 7%;
+}
+
+/* // Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap */
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  div.justify-content-end.text-center.row {
+    padding-left: 6%;
   }
-  .jumbo-skill-info {
-    font-size: 13px;
-  }
-} */
+  
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}

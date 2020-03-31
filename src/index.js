@@ -15,6 +15,7 @@ import SideNavBar from "./SideNav";
 import Monsters from './MonsterComponents/Monsters';
 import EffectList from './EffectComponents/EffectList';
 import ArmorList from './ArmorComponents/ArmorList';
+import NewSkills from './SkillComponents/NewSkills';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
@@ -40,6 +41,7 @@ const routing = (
       <Route exact path="/Monsters" component={Monsters} />
       <Route exact path="/Effects" component={EffectList} />
       <Route exact path="/ArmorList" component={ArmorList} />
+      <Route exact path="/NewSkills" component={NewSkills} />
     </Container>
    
   </Router>

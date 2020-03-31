@@ -56,7 +56,7 @@ const SideNavBar = () => {
             <NavText>Cover</NavText>
           </NavItem>
         </NavItem>
-        <NavItem eventKey="/Skills" id="navSkill">
+        <NavItem eventKey="/NewSkills" id="navSkill">
           <NavIcon>
             <i className="fab fa-megaport" style={{ fontSize: "1.75em" }} />
           </NavIcon>
