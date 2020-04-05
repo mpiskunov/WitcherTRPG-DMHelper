@@ -9,12 +9,12 @@ const SideNavBar = () => {
   return (
     <SideNav
       id="NavBar"
-      onSelect={selected => {
+      onSelect={(selected) => {
         SelectedNavBar([selected.navID]);
         //history.push(`${selected.eventKey}`);
         history.push({
           pathname: selected.eventKey,
-          state: {nav: selected.navID}
+          state: { nav: selected.navID },
         });
       }}
     >
@@ -26,7 +26,7 @@ const SideNavBar = () => {
           </NavIcon>
           <NavText>Home</NavText>
         </NavItem>
-        <NavItem eventKey="/DMMenu"  id="navWeapon">
+        <NavItem eventKey="/DMMenu" id="navWeapon">
           <NavIcon>
             <i className="fas fa-bomb" style={{ fontSize: "1.75em" }} />
           </NavIcon>
@@ -34,7 +34,10 @@ const SideNavBar = () => {
         </NavItem>
         <NavItem eventKey="/Loot" id="navLoot">
           <NavIcon>
-            <i className="fas fa-hand-holding-usd" style={{ fontSize: "1.75em" }} />
+            <i
+              className="fas fa-hand-holding-usd"
+              style={{ fontSize: "1.75em" }}
+            />
           </NavIcon>
           <NavText>Monster Loot</NavText>
         </NavItem>
@@ -46,10 +49,7 @@ const SideNavBar = () => {
         </NavItem>
         <NavItem eventKey="/Combat" id="navCombat">
           <NavIcon>
-            <i
-              className="fas fa-fist-raised"
-              style={{ fontSize: "1.75em" }}
-            />
+            <i className="fas fa-fist-raised" style={{ fontSize: "1.75em" }} />
           </NavIcon>
           <NavText>Combat</NavText>
           <NavItem eventKey="/Combat/Cover" id="navCombatCover">
@@ -77,6 +77,12 @@ const SideNavBar = () => {
         <NavItem eventKey="/ArmorList" id="navArmor">
           <NavIcon>
             <i className="fas fa-shield-alt" style={{ fontSize: "1.75em" }} />
+          </NavIcon>
+          <NavText>Monsters</NavText>
+        </NavItem>
+        <NavItem eventKey="/FumblesOrCriticals" id="navFumbleCrit">
+          <NavIcon>
+            <i className="fas fa-user-injured" style={{ fontSize: "1.75em" }} />
           </NavIcon>
           <NavText>Monsters</NavText>
         </NavItem>
